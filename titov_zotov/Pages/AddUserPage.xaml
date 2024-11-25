@@ -1,0 +1,41 @@
+﻿<Page x:Class="titov_zotov.Pages.AddUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:titov_zotov.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddUserPage" Height="Auto" Width="Auto">
+
+    <Grid Background="White" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Логин" Grid.Row="0" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Center"/>
+        <TextBlock Text="Пароль" Grid.Row="1" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Center"/>
+        <TextBlock Text="Роль" Grid.Row="2" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Center"/>
+        <TextBlock Text="ФИО" Grid.Row="3" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Center"/>
+        <TextBlock Text="Фото (необязательно)" Grid.Row="4" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Center"/>
+        <TextBox x:Name="Login" Text="{Binding Login}" Grid.Row="0" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="Password" Text="{Binding Password}" Grid.Row="1" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center"/>
+        <ComboBox Name="cmbRole" Grid.Row="2" Text="{Binding Role}" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center">
+            <ComboBoxItem Content="администратор"/>
+            <ComboBoxItem Content="пользователь"/>
+        </ComboBox>
+        <TextBox x:Name="FullName" Text="{Binding FIO}" Grid.Row="3" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="Img" Text="{Binding Photo}" Grid.Row="4" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center"/>
+        <CheckBox x:Name="MyCheckbox" Content="Хэширование пароля" HorizontalAlignment="Left" Margin="10,20,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.Column="1" Height="20"/>
+        <Button Name="ButtonSave" Content="Сохранить" Grid.Row="5" Click="ButtonSave_Click" Grid.ColumnSpan="2" Margin="0,100,50,0" HorizontalAlignment="Right"/>
+        <Button Name="ButtonCancel" Content="Отмена" Grid.Row="5" Click="ButtonCancel_Click" Grid.ColumnSpan="2" Margin="50,100,0,0" HorizontalAlignment="Left"/>
+    </Grid>
+</Page>
