@@ -58,7 +58,7 @@ namespace titov_zotov.Pages
                 return;
             }
 
-            // Проверка формата пароля
+
             if (!IsValidPassword(PasswordBoxPassword.Password))
             {
                 MessageBox.Show("Пароль должен содержать минимум 8 символов, хотя бы одну цифру и заглавную букву использовать только английские символы.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -105,13 +105,11 @@ namespace titov_zotov.Pages
         {
             using (var db = new Titov_ZotovEntities())
             {
-                var user = db.User.AsNoTracking().FirstOrDefault(u => u.Login == TextBoxFullName.Text);
+                // Измените TextBoxFullName на login
+                var user = db.User.AsNoTracking().FirstOrDefault(u => u.Login == login);
 
-                if (user == null)
-                {
-                    return false;
-                }
-                return true;
+                // Возвращаем true, если пользователь найден
+                return user != null;
             }
         }
 

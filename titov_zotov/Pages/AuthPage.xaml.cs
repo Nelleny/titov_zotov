@@ -61,10 +61,10 @@ namespace titov_zotov.Pages
 
                     switch (user.Role)
                     {
-                        case "администратор":
+                        case "Администратор":
                             NavigationService?.Navigate(new AdminMenu());
                             break;
-                        case "пользователь":
+                        case "Пользователь":
                             NavigationService?.Navigate(new UserMenu());
                             break;
                     }

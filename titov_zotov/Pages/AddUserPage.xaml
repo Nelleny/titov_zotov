@@ -26,13 +26,13 @@
         <TextBlock Text="Роль" Grid.Row="2" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Center"/>
         <TextBlock Text="ФИО" Grid.Row="3" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Center"/>
         <TextBlock Text="Фото (необязательно)" Grid.Row="4" Grid.Column="0" Margin="10,10,0,0" VerticalAlignment="Center"/>
-        <TextBox x:Name="Login" Text="{Binding Login}" Grid.Row="0" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="Password" Text="{Binding Password}" Grid.Row="1" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center"/>
-        <ComboBox Name="cmbRole" Grid.Row="2" Text="{Binding Role}" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center">
-            <ComboBoxItem Content="администратор"/>
-            <ComboBoxItem Content="пользователь"/>
+        <TextBox x:Name="Login" Text="{Binding Login}" ToolTip="Введите логин!" Grid.Row="0" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="Password" Text="{Binding Password}" ToolTip="Введите пароль!" Grid.Row="1" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center"/>
+        <ComboBox Name="cmbRole" Grid.Row="2" Text="{Binding Role}" ToolTip="Выберите роль!!" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center">
+            <ComboBoxItem Content="Администратор"/>
+            <ComboBoxItem Content="Пользователь"/>
         </ComboBox>
-        <TextBox x:Name="FullName" Text="{Binding FIO}" Grid.Row="3" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="FullName" Text="{Binding FIO}" ToolTip="Введите ФИО!" Grid.Row="3" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center"/>
         <TextBox x:Name="Img" Text="{Binding Photo}" Grid.Row="4" Grid.Column="1" Margin="10,10,10,0" VerticalContentAlignment="Center"/>
         <CheckBox x:Name="MyCheckbox" Content="Хэширование пароля" HorizontalAlignment="Left" Margin="10,20,0,0" Grid.Row="5" VerticalAlignment="Top" Grid.Column="1" Height="20"/>
         <Button Name="ButtonSave" Content="Сохранить" Grid.Row="5" Click="ButtonSave_Click" Grid.ColumnSpan="2" Margin="0,100,50,0" HorizontalAlignment="Right"/>

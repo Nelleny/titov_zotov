@@ -6,9 +6,9 @@
       xmlns:local="clr-namespace:titov_zotov.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Регистрация" MinHeight="600" MinWidth="1000" MaxHeight="600" MaxWidth="1000">
+      Title="Регистрация" Height="Auto" Width="Auto">
 
-    <Grid Margin="10" Background="White">
+    <Grid Margin="10,0,0,0" Background="White" Height="430" VerticalAlignment="Center" HorizontalAlignment="Left" Width="790">
         <Grid.RowDefinitions >
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -38,14 +38,14 @@
         <Label Content="Роль:" Grid.Row="4" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Center"/>
         <ComboBox x:Name="ComboBoxRole" Grid.Row="4" Margin="200,10,50,0" HorizontalAlignment="Stretch"
                    ToolTip="Выберите роль">
-            <ComboBoxItem Content="администратор"/>
-            <ComboBoxItem Content="пользователь"/>
+            <ComboBoxItem Content="Администратор"/>
+            <ComboBoxItem Content="Пользователь"/>
         </ComboBox>
 
-        <Button x:Name="ButtonRegister" Click="ButtonRegister_Click" Content="Регистрация" Grid.Row="5" Width="100" Margin="352,98,528,213"
+        <Button x:Name="ButtonRegister" Click="ButtonRegister_Click" Content="Регистрация" Grid.Row="5" Width="100" Margin="265,95,415,66"
                 ToolTip="Нажмите для регистрации"/>
-        <Button x:Name="ButtonCancel" Click="ButtonCancel_Click" Content="Отмена" Grid.Row="5" Width="100" Margin="515,98,365,213"
+        <Button x:Name="ButtonCancel" Click="ButtonCancel_Click" Content="Отмена" Grid.Row="5" Width="100" Margin="434,95,246,66"
                 ToolTip="Нажмите для отмены операции"/>
-        <CheckBox x:Name="MyCheckbox" Content="Хэширование пароля" HorizontalAlignment="Left" Margin="664,108,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+        <CheckBox x:Name="MyCheckbox" Content="Хэширование пароля" HorizontalAlignment="Left" Margin="624,105,0,0" Grid.Row="5" VerticalAlignment="Top"/>
     </Grid>
 </Page>

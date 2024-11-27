@@ -10,7 +10,7 @@
 
     <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="500"/>
+            <RowDefinition Height="450"/>
             <RowDefinition Height="173*"/>
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0" Name="DataGridUser" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="DataGridUser_SelectionChanged">

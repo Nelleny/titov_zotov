@@ -6,8 +6,28 @@
         xmlns:local="clr-namespace:titov_zotov"
         mc:Ignorable="d"
         Title="Главное меню" MinHeight="600" MinWidth="1000" MaxHeight="600" MaxWidth="1000">
-        
+
     <Grid>
-        <Frame x:Name="MainFrame" Height="Auto" Width="Auto" Source="Pages/AuthPage.xaml" Grid.Row="1" Navigated="MainFrame_OnNavigated" NavigationUIVisibility="Hidden"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Для кнопки -->
+            <RowDefinition Height="*"/>
+            <!-- Для Frame -->
+        </Grid.RowDefinitions>
+
+        <Button x:Name="ButtonRegister" 
+            Click="ButtonRegister_Click" 
+            Content="Назад" 
+            Width="100" 
+            Margin="0 10 880 10" 
+            Grid.Row="0"/>
+
+        <Frame x:Name="MainFrame" 
+           Height="Auto" 
+           Width="Auto" 
+           Source="Pages/AuthPage.xaml" 
+           Navigated="MainFrame_OnNavigated" 
+           NavigationUIVisibility="Hidden"  
+           Grid.Row="1"/>
     </Grid>
 </Window>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using titov_zotov.Pages;
 
 namespace titov_zotov
 {
@@ -43,6 +44,11 @@ namespace titov_zotov
         {
             if (!(e.Content is Page page)) return;
             this.Title = $"ProjectByTitov - {page.Title}";
+        }
+
+        private void ButtonRegister_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new AuthPage());
         }
     }
 }

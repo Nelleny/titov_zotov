@@ -23,6 +23,47 @@ namespace titov_zotov.Pages
         public UserMenu()
         {
             InitializeComponent();
+            CmbSorting.SelectedIndex = 0;
+
+            UserRoleCheckBox.IsChecked = false;
+
+            var currentUsers = Titov_ZotovEntities.GetContext().User.ToList();
+
+            ListUser.ItemsSource = currentUsers;
+
+            UpdateUsers();
+
+            SearchTextBox.TextChanged += (s, e) => UpdateUsers();
+            CmbSorting.SelectionChanged += (s, e) => UpdateUsers();
+            UserRoleCheckBox.Checked += (s, e) => UpdateUsers();
+            UserRoleCheckBox.Unchecked += (s, e) => UpdateUsers();
+
+        }
+
+        private void ClearFilterButton_Click(object sender, RoutedEventArgs e)
+        {
+            SearchTextBox.Text = string.Empty; // Очищаем текст поиска
+            CmbSorting.SelectedIndex = 0; // Устанавливаем сортировку по возрастанию
+            UserRoleCheckBox.IsChecked = false; // Снимаем галочку с CheckBox
+
+            UpdateUsers(); // Обновляем список пользователей
+        }
+        private void UpdateUsers()
+
+        {
+            var currentUsers = Titov_ZotovEntities.GetContext().User.ToList();
+
+            currentUsers = currentUsers.Where(x => x.FIO.ToLower().Contains(SearchTextBox.Text.ToLower())).ToList();
+
+            if (UserRoleCheckBox.IsChecked.Value)
+
+                currentUsers = currentUsers.Where(x => x.Role.Contains("Пользователь")).ToList();
+
+            if (CmbSorting.SelectedIndex == 0)
+
+                ListUser.ItemsSource = currentUsers.OrderBy(x => x.FIO).ToList();
+
+            else ListUser.ItemsSource = currentUsers.OrderByDescending(x => x.FIO).ToList();
         }
     }
 }
