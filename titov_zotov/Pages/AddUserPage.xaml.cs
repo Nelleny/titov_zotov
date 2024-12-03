@@ -58,7 +58,18 @@ namespace titov_zotov.Pages
 
             if (errors.Length > 0)
             {
-                MessageBox.Show(errors.ToString()); return;
+                MessageBox.Show(errors.ToString());
+                return;
+            }
+
+            // Проверка на существование логина в базе данных
+            var existingUser = Titov_ZotovEntities.GetContext().User
+                .FirstOrDefault(u => u.Login == _currentUser.Login);
+
+            if (existingUser != null && _currentUser.ID == 0) // Если логин уже существует и это новый пользователь
+            {
+                MessageBox.Show("Пользователь с таким логином уже существует!");
+                return;
             }
 
             if (_currentUser.ID == 0)
@@ -79,6 +90,7 @@ namespace titov_zotov.Pages
                 MessageBox.Show(ex.Message.ToString());
             }
         }
+
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
